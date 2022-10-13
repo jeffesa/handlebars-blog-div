@@ -1,0 +1,160 @@
+.page-header {   
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $family-main;
+        color: $orange;
+    }  
+    .page-header-title {
+        background-color: #5CB6BE;
+        display: flex;
+        height: 300px;
+        align-items: flex-end;
+        padding-bottom: 30px;
+        h1 {
+            color: #fff;
+            font-size: 34px;
+            font-family: $family-main;
+            font-weight: 400;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        p {
+            color: #fff;
+            font-size: 12px;
+            font-family: $family-main;
+            font-weight: 400;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+    }
+    .page-content {
+        padding-top: 80px;
+        p {
+            margin-bottom: 40px;
+            font-size: 16px;
+            line-height: 30px;
+        }
+        h2 {
+            line-height: 1;
+            color: $orange;
+            font-size: 40px;
+        }
+        @include from($tablet) {
+            h2 {
+                font-size: 55px;                
+            }
+        }
+        h3 {
+            color: $orange;
+            font-size: 28px;
+            padding: 50px 0 40px;
+            line-height: 1;
+        }
+        h4 {
+            color: $orange;
+            font-size: 22px;
+            padding: 35px 0 28px;
+            line-height: 1;
+        }
+        ol, ul {
+            padding-left: 20px;
+            margin-bottom: 40px;
+            li {
+                margin-bottom: 12px;
+                padding-left: 5px;
+            }
+        }
+        ul {
+            list-style-type: disc;
+        }
+        .grid-image-post {
+            display: grid ;
+            grid-template: 
+            'image-grid'
+            'area1'
+            'area2'
+            'area3'
+            'area4';
+            .area1 {
+                grid-area: area1;
+            }
+            .area2 {
+                grid-area: area2;
+            }
+            .area3 {
+                grid-area: area3;
+            }
+            .area4 {
+                grid-area: area4;
+            }
+            .image-grid {
+                grid-area: image-grid;
+                img {
+                    max-width: 100%;
+                }
+            }
+            @include from($desktop) {
+                grid-template: 
+                'area1 image-grid area2'
+                'area4 image-grid area3';
+                .image-grid {
+                    align-self: center;
+                    margin: 20px;
+                    img {
+                        min-width: 300px;
+                    }
+                }
+            }                    
+        }
+    }
+    &.base-page {
+        .page-content {
+            @include from($tablet) {
+                max-width: 60%;
+                ol, ul {
+                    padding-left: 40px;
+                }
+            }
+            ul {
+                list-style-type: disc;
+                li {
+                    ul {
+                        li {
+                            margin-bottom: 0;
+                        }
+                        margin-bottom: 0;
+                        list-style-type: circle;
+                        &:first-of-type {
+                            ul {
+                                margin-bottom: 0;
+                                list-style-type: square;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+._form-content {
+    display: flex;
+    flex-direction: column;
+    ._form_element {
+        margin-left: 0 !important;
+        input {
+            width: 100% !important;
+        }
+        select {
+            height: 40px !important;
+            border-radius: 4px !important;
+        }
+        textarea {
+            height: 100px !important;
+            border-radius: 4px !important;
+        }
+    }
+    ._button-wrapper {
+        margin-left: 0 !important;
+    }
+}
+  

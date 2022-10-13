@@ -1,0 +1,186 @@
+.hero {
+  .slider {
+    margin: auto;
+
+    @include from($fullhd) {
+      width: $fullhd;
+    }
+    
+    .items {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      min-height: 100vh;
+
+      .banner-image {
+        width: 100%;
+        object-fit: cover;
+        img {
+          width: 100vw;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .icon-svg {
+        position: relative;
+        left: -10px;
+        top: -1px;
+      }
+    }
+
+    .information {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      height: 100%;
+      color: $white;
+      font-size: $size-7;
+      line-height: $size-7;
+      padding-left: $spacing;
+      padding-right: $spacing;
+
+      .container {
+        display: flex;
+        align-items: center;
+
+        .columns {
+          .column {
+            @include touch {
+              padding-right: 0 !important;
+            }
+          }
+        }
+      }
+
+      .hero-title {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: $size-4;
+
+        @include from($fullhd) {
+          font-size: $size-8 !important;
+          line-height: $size-8 !important;
+        }
+        @include from($desktop) {
+          font-size: $size-7;
+          line-height: $size-7;
+        }
+        @include touch {
+          font-size: $size-6;
+          line-height: $size-6;
+        }
+        @include mobile {
+          font-size: $size-5;
+          line-height: $size-5;
+        }
+      }
+
+      .hero-description {
+        font-family: $family-sans-serif;
+
+        @include from($fullhd) {
+          font-size: $size-2;
+          line-height: $size-4;
+          margin-bottom: $size-6;
+        }
+        @include from($desktop) {
+          font-size: $size-2;
+          line-height: $size-4;
+          margin-bottom: $size-6;
+        }
+        @include touch {
+          font-size: $size-2;
+          line-height: $size-4;
+          margin-bottom: $size-6;
+        }
+        @include mobile {
+          font-size: $size-1;
+          line-height: $size-3;
+          margin-bottom: $size-6;
+        }
+      }
+
+      button {
+        @include mobile {
+          position: absolute;
+          bottom: 53px;
+
+          span {
+            padding: 0 !important;
+          }
+        }
+        @include touch {
+          position: absolute;
+          bottom: 53px;
+
+          span {
+            padding: 0 !important;
+          }
+        }
+
+        span {
+          padding-left: 16px;
+          padding-right: 60px;
+        }
+      }
+    }
+
+    .flickity-page-dots {
+      @include from($fullhd) {
+        width: $fullhd;
+      }
+
+      font-size: $size-1;
+      display: flex;
+      justify-content: flex-end;
+      position: relative;
+      top: -90px;
+      padding-right: ($spacing);
+      margin: 0 auto;
+
+      @include mobile {
+        top: -60px !important;
+      }
+      
+      & {
+        counter-reset: a;
+      }
+
+      .dot {
+        background: transparent;
+        color: $white;
+        opacity: 1;
+
+        &::after {
+          content: counter(a, decimal-leading-zero);
+          counter-increment: a;
+        }
+
+        &.is-selected {
+          &::after {
+            border-bottom: 2px solid $white;
+            padding-bottom: 4px;
+          }
+        }
+
+        &:not(:last-child) {
+          padding-right: 24px;
+
+          @include mobile {
+            padding-right: 20px;
+          }
+          @include touch {
+            padding-right: 20px;
+          }
+        }
+      }
+
+      li:only-child{
+        display: none;
+      }
+    }
+  }
+}

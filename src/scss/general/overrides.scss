@@ -1,0 +1,159 @@
+// bulma
+@import "../../../node_modules/bulma/sass/utilities/_all";
+
+// custom
+@import "./sizes";
+@import "./fonts";
+@import "./colors";
+@import "./spacings";
+@import "./button";
+
+// custom general-classes
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px;
+      
+      @include from ($tablet) {
+        margin-#{$side}: #{$space}px !important;
+      }
+    }
+
+    .m-#{str-slice($side, 0, 1)}-#{$space}-touch {
+      @include touch {
+        margin-#{$side}: #{$space}px !important;
+      }
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px;
+
+      @include from ($tablet) {
+        padding-#{$side}: #{$space}px !important;
+      }
+    }
+
+    .p-#{str-slice($side, 0, 1)}-#{$space}-touch {
+      @include touch {
+        padding-#{$side}: #{$space}px !important;
+      }
+    }
+  }
+
+  .m-#{$space} {
+    margin: #{$space}px !important;
+  }
+  .mt-#{$space} {
+    margin-top: #{$space}px !important;
+  }
+  .mr-#{$space} {
+    margin-right: #{$space}px !important;
+  }
+  .mb-#{$space} {
+    margin-bottom: #{$space}px !important;
+  }
+  .ml-#{$space} {
+    margin-left: #{$space}px !important;
+  }
+  .p-#{$space} {
+    padding: #{$space}px !important;
+  }
+  .pt-#{$space} {
+    padding-top: #{$space}px !important;
+  }
+  .pb-#{$space} {
+    padding-bottom: #{$space}px !important;
+  }
+}
+
+.m-0-a {
+  margin: 0 auto;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+@each $lh in $line-heights {
+  .lh-#{$lh} {
+    line-height: #{$lh} !important;
+  }
+}
+
+html,
+body {
+  background: $site-bg;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  strong {
+    color: inherit !important;
+  }
+}
+
+.navbar-burger {
+  span {
+    height: 2px;
+
+    &:nth-child(1) {
+      top: calc(50% - 10px) !important;
+    }
+    &:nth-child(2) {
+      top: calc(50% - 2px) !important;
+    }
+    &:nth-child(3) {
+      top: calc(50% + 6px) !important;
+    }
+  }
+
+  &.is-active {
+    span {
+      &:nth-child(1) {
+        transform: translateY(11px) rotate(45deg) !important;
+      }
+      &:nth-child(3) {
+        transform: translateY(-5px) rotate(-45deg) !important;
+      }
+    }
+  }
+}
+
+.has-underscore {
+  &:before {
+    content: "_";
+    color: $primary;
+    font-weight: bold;
+    // display: block;
+    // position: relative;
+  }
+}
+
+.container {
+  padding: 0 32px;
+
+  @include until($desktop) {
+    padding: 0 16px;
+  }
+}
+
+.link {
+  text-decoration: underline;
+  font-family: $family-secondary;
+}
+
+.is-fixed {
+  position: fixed !important;
+}
+
+.is-fullwidth {
+  width: 100%;
+}
+
+.is-fullheight {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $family-main;
+}

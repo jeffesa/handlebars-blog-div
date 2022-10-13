@@ -1,0 +1,67 @@
+.button, .related-posts .maxbutton-1.maxbutton.maxbutton-botao-laranja {
+  font-family: $family-primary;
+  border-radius: 8px !important;
+  padding: 29px 20px !important;
+  font-weight: 400 !important;
+  transition: background-color 0.2s ease-in-out;
+  max-width: 100%;
+  white-space: inherit !important;
+  &.is-small {
+    border-radius: $radius-small;
+    font-size: $size-small;
+  }
+  &.is-normal {
+    font-size: $size-normal;
+  }
+
+  &.is-medium {
+    font-size: $size-medium;
+  }
+  &.is-large {
+    font-size: $size-5;
+    line-height: 24px;
+  }
+
+  .icon-left {
+    position: relative;
+    left: -10px;
+    top: -1px;
+  }
+}
+
+.related-posts .maxbutton-1.maxbutton.maxbutton-botao-laranja {
+  border-color: transparent;
+  background-color: $orange;
+  height: inherit;
+  font-family: $family-primary;
+  border-radius: 8px !important;
+  padding: 29px 20px !important;
+  background-image: url(../img/bt-menos.svg);
+  background-repeat: no-repeat;
+  background-position: 8px 42%;
+  @include until($desktop) {
+    background-image: none;
+  }
+  .mb-text {
+    font-family: $family-primary;  
+    padding: 0;
+    font-size: $size-small;
+  }
+  &:hover {
+    background-color: #f0753d;
+    color: #fff;
+    border-color: transparent;
+    .mb-text {
+      color: #fff;
+    }
+  }
+}
+
+.page-posts .related-posts .button {
+  @include until($mobile) {
+    span {
+      justify-content: center;
+      padding-right: 0;
+    }
+  }
+}

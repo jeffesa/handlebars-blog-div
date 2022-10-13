@@ -1,0 +1,373 @@
+.o-que-fazemos-consultoria {
+     .o-que-fazemos-consultoria-text {
+        display: flex;
+        flex-direction: column-reverse;
+        &>div:last-child {
+            text-align: center;
+            margin-bottom: 20px;
+            img  {
+                max-width: 100%;
+            }
+        }
+        @include from($tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+            &>div:last-child {
+                text-align: inherit;
+                margin-bottom: 0;
+                padding-left: 20px;
+                img {
+                    max-width: 300px;
+                }
+            }
+        }
+    }
+}
+
+.o-que-fazemos-treinamentos {
+    .o-que-fazemos-treinamentos-text {
+        @include from($tablet) {
+            max-width: 70%;
+        }
+    }
+
+}
+
+.trilhas {
+    @include until($mobile) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        h2 {
+            padding-left: 16px;
+        }
+    }
+    h2 {
+        color: $orange;
+        font-size: 28px;
+        line-height: 1;        
+    }
+}
+
+
+.slider-trilhas {
+    width: 100%;
+    height: 100%;
+    max-height: 423px;
+    @include from($mobile) {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    @include from($desktop) {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    &.purple .flickity-button {
+        background-color: $purple !important;
+    }
+
+    .card-action {
+        position: absolute;
+        left: 40px;
+        bottom: 40px;
+        display: inline-flex;
+        align-items: center;
+        height: 38px;
+        font-size: 14px;
+        background: url(../img/bt-menos.svg) no-repeat -6px 0;
+        transition: all 0.2s ease-in-out;
+        padding-left: 2.5rem;
+        color: #fff;
+        &:hover {
+            background: url(../img/bt-menos-orange-hover.svg) no-repeat -6px 0;
+        }
+        @include until(450px) {
+            top: 20px;
+            right: 20px;
+            left: inherit;
+            bottom: inherit;
+        }
+    }
+    &.orange-bg {
+        .card-action {
+            &:hover {
+                background: url(../img/bt-menos-purple-hover.svg) no-repeat -6px 0;
+            }
+        }
+    }
+    
+    .flickity-page-dots {
+        @include from($fullhd) {
+            width: $fullhd;
+        }
+        font-size: $size-1;
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        bottom: 0px;
+        margin-top: -50px;
+        transform: translateY(calc(-100% - 20px));        
+        padding-left: 10px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+
+        & {
+            counter-reset: a;
+        }
+
+        .dot {
+            background: transparent;
+            color: #2e234b;
+            opacity: 1;
+            margin-bottom: 15px;
+
+            &.is-selected {
+            color: $white;
+            }
+
+            &::after {
+            content: counter(a, decimal-leading-zero);
+            counter-increment: a;
+            }
+
+            &.is-selected {
+            &::after {
+                border-bottom: 2px solid $white;
+                padding-bottom: 4px;
+            }
+            }
+
+            &:not(:last-child) {
+            padding-right: 24px;
+
+            @include mobile {
+                padding-right: 20px;
+            }
+            @include touch {
+                padding-right: 20px;
+            }
+            }
+        }
+    }
+    .trilhas-item {
+        width: 90%;
+        max-width: 423px;
+        max-height: 423px;
+        object-fit: cover;
+        position: relative;
+        margin: 0 1rem;
+        height: 350px;
+        .trilhas-shape {          
+            border-radius: 15px;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+            h2 {
+                color: #fff;
+                font-size: 24px;
+                line-height: 32px;
+            }
+        }
+        .trilhas-content {
+            position: absolute;
+            color: #fff;            
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;            
+            font-size: 12px;
+            opacity: 0;
+            transition: all 0.3s linear;
+            visibility: hidden;
+            overflow-y: auto;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            padding: 0 10px 0 0 !important;
+            &.show {
+                visibility: visible;
+                opacity: 1;
+            }
+            &>div {
+                padding: 10px 12px;
+                background-color: $orange;
+                border-radius: 15px;
+                overflow: auto;
+                height: 100%;
+            }
+            @include from($tablet) {
+                font-size: 14px;
+                &>div {
+                    padding: 20px 40px;
+                }
+
+            }
+            @include until($mobile) {
+                padding-bottom: 40px;
+            }
+        }
+
+        @include until($mobile) {
+            width: 100%;
+            margin: 0;
+            .trilhas-shape {
+                border-radius: 0;                
+            }
+        }
+
+        @include until($desktop) {            
+            &:before {
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                max-width: 423px;
+                max-height: 423px;
+                // background: rgba(255,255,255,1);
+                position: absolute;
+                z-index: 1;
+                border-radius: 8px;
+                transition: background 0.3s ease-in-out;
+            }
+            &.is-selected {
+                &:before {
+                    transition: background 0.3s ease-in-out;
+                }
+            }
+        }
+
+        @include until($mobile) {            
+            &:before {
+                border-radius: 0px;
+            }
+        }
+
+        @include from($desktop) {
+            padding: 0 0.70rem 0 0;
+            margin: 0;
+            max-width: 360px;
+            height: 350px;
+        }
+
+        .trilhas-info {
+            width: 100%;
+            padding: 1.25rem 1.25rem 2rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;            
+            &:after {
+                content: '';
+                display: block;
+                width: 90%;
+                height: 1px;
+                background-color: rgba(255, 255, 255, 0.5);
+                margin: auto;
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%);
+                top: 0;
+                z-index: 2;
+            }
+
+        }
+    }
+
+    .flickity-slider {
+        @include from($tablet) {
+            left: 0 !important;
+        }
+    }
+
+    .flickity-prev-next-button {
+        width: 28px;
+        height: 28px;
+        background-color: $orange;
+        transition: opacity 0.2s ease-in-out;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    .flickity-prev-next-button .flickity-button-icon {
+        width: 35%;
+        height: 35%;
+        left: 33%;
+        top: 33%;
+        fill: $white;
+    }
+
+    .flickity-prev-next-button.previous {
+        left: 2%;
+        @include from($tablet) {
+          left: -3.5%;
+        }
+    }
+  
+      .flickity-prev-next-button.next {
+        right: -3.5%;
+        @include until($tablet) {
+          right: 1%;
+        }
+    }
+
+    .flickity-button {
+        &:hover {
+            opacity: 0.6;
+            background-color: $orange;
+        }
+    }
+}
+
+.o-que-fazemos-curadoria {
+    .o-que-fazemos-curadoria-text {
+        h4 {
+            text-align: center;
+            @include from($tablet) {
+                text-align: left;
+            }
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column-reverse;            
+            &>div:last-child {
+                text-align: center;
+                margin-bottom: 40px;
+                img {
+                    max-width: 100%;
+                }
+            }
+            @include from($tablet) {
+                flex-direction: row;
+                &>div:first-child {
+                    padding-right: 10%;
+                }
+                &>div:last-child {
+                    text-align: inherit;
+                    padding-left: 30px;
+                    margin-bottom: 0px;
+                    img {
+                        max-width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.slider-trilhas {
+    & .trilhas-item.purple {
+        .trilhas-content>div {
+            background-color: $purple !important;
+        }
+    }
+    & .trilhas-item.light-blue {
+        .trilhas-content>div {
+            background-color: $light-blue !important;
+        }            
+    }
+}

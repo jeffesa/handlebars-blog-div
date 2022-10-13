@@ -1,0 +1,134 @@
+<header class="nav-header is-fixed">
+
+  <!-- Start Audima Widget Injection -->
+  <div id="audimaWidget"></div>
+  <script src="https://audio7.audima.co/audima-widget.js"></script>
+  <!-- End Audima Widget Injection -->
+
+  <div class="header-inner">
+    <div class="logo">
+      <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="is-flex m-l-24"><img src="/img/logo.svg" alt="Mais Diversidade" title="<?php esc_html_e( 'Skip to content', 'maisdiversidade' ); ?>" /></a>
+    </div>
+
+    <nav class="nav-menu">
+      <div class="nav-item"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="nav-link active">Início</a></div>
+      <div class="nav-item"><a href="/sobreNos.html" class="nav-link">Sobre Nós</a></div>
+      <div class="nav-item nav-contents">
+        <a href="javascript:;" class="nav-link">O Que Fazemos</a>
+        <div class="nav-subnav is-hidden">
+          <ul>
+            <li><a href="/oque-fazemos-consultoria.html" class="nav-link">Consultoria em diversidade e inclusão</a></li>
+            <li><a href="/oquefazemos-treinamento.html" class="nav-link">Treinamentos em diversidade e inclusão</a></li>
+            <li><a href="/oquefazemos-curadoria.html" class="nav-link">Curadoria de talentos diversos</a></li>
+            <li><a href="#" class="nav-link">CONSULTORIA EM COMUNICAÇÃO</a></li>
+            <li><a href="#" class="nav-link">CENSO, PESQUISAS E BENCHAMRKS</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-item nav-contents">
+        <a class="nav-link nav-contents-link">Conteúdos</a>
+        <div class="nav-subnav is-hidden">
+          <ul>
+            <li><a href="namidia.html" class="nav-link">Na Mídia</a></li>
+            <li><a href="podcasts.html" class="nav-link">Podcast</a></li>
+            <li><a href="ebooks.html" class="nav-link">Ebooks</a></li>
+            <li><a href="posts.html" class="nav-link">Artigos</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-item nav-contents">
+        <a class="nav-link nav-contents-link ">Projetos</a>
+        <div class="nav-subnav is-hidden">
+          <ul>
+            <li><a href="<?php echo the_field('feira_diversa', 'options'); ?>" class="nav-link">Feira DiverS/A</a></li>
+            <li><a href="post.html" class="nav-link">Fórum Gerações e Futuro do Trabalho</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="nav-item"><a href="base-page.html" class="nav-link">Instituto</a></div>
+      <div class="nav-item"><a href="contato.html" class="nav-link nav-contato">Contato</a></div>
+      <div class="nav-lang-mobile">
+        <a href="javascript:;" class="nav-link active">PT</a>
+        <a href="javascript:;" class="nav-link">EN</a>
+        <a href="javascript:;" class="nav-link">ES</a>
+      </div>
+      <a href="<?php echo the_field('envie_seu_cv', 'options'); ?>" class="nav-curriculum-mobile">Envie seu CV</a>
+      <div class="nav-item nav-icon">
+        <a href="https://api.whatsapp.com/send?phone=5511971058989" class="nav-link gtm_whatsapp" target="_blank">
+          <svg width="20" height="20" class="icon-whatsapp" viewBox="0 0 21 21" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M15.2103 12.5617C14.9508 12.4319 13.6748 11.804 13.4369 11.7174C13.1989 11.6307 13.0259 11.5875 12.8529 11.8472C12.6799 12.107 12.1825 12.6917 12.031 12.8649C11.8797 13.0381 11.7283 13.0598 11.4688 12.9299C11.2092 12.7999 10.3729 12.5259 9.38159 11.6416C8.60994 10.9534 8.08906 10.1035 7.93765 9.84364C7.78629 9.58385 7.92151 9.4434 8.05151 9.31395C8.16825 9.19765 8.31105 9.01078 8.44079 8.85927C8.57054 8.70771 8.61382 8.59938 8.70033 8.4263C8.78685 8.25302 8.74362 8.10146 8.67867 7.97157C8.61382 7.84167 8.09479 6.56409 7.87848 6.04436C7.6678 5.53837 7.45383 5.60691 7.2945 5.59884C7.14329 5.59132 6.97011 5.58972 6.79708 5.58972C6.62405 5.58972 6.34285 5.65467 6.10497 5.91446C5.86705 6.17435 5.19655 6.80226 5.19655 8.07975C5.19655 9.35728 6.12654 10.5914 6.25638 10.7646C6.38613 10.9379 8.08652 13.5594 10.6901 14.6837C11.3094 14.9511 11.7929 15.1108 12.1697 15.2304C12.7915 15.428 13.3573 15.4001 13.8045 15.3333C14.3032 15.2587 15.3401 14.7054 15.5564 14.0992C15.7726 13.4928 15.7726 12.9732 15.7077 12.8649C15.6429 12.7567 15.4699 12.6917 15.2103 12.5617M10.4746 19.0278H10.4712C8.92192 19.0272 7.40243 18.6111 6.07688 17.8244L5.76166 17.6373L2.49401 18.4945L3.36617 15.3085L3.16091 14.9819C2.29667 13.6073 1.84025 12.0186 1.84089 10.3873C1.84274 5.62708 5.71583 1.75433 10.4781 1.75433C12.7841 1.75513 14.9518 2.65438 16.5819 4.28629C18.2119 5.91815 19.1091 8.08737 19.1082 10.3942C19.1063 15.1548 15.2332 19.0278 10.4746 19.0278M17.8225 3.04626C15.8613 1.08284 13.2533 0.00109574 10.4745 0C4.74914 0 0.0893527 4.65944 0.0870616 10.3866C0.0863145 12.2174 0.564605 14.0043 1.47362 15.5796L0 20.9623L5.5065 19.5178C7.0237 20.3453 8.73191 20.7815 10.4704 20.7821H10.4746H10.4747C16.1995 20.7821 20.8597 16.1222 20.862 10.3949C20.8631 7.61944 19.7836 5.00963 17.8225 3.04626"
+              fill="white" />
+          </svg>
+        </a>
+      </div>
+      <div class="nav-item nav-icon is-relative">
+        <a class="nav-link search-button">
+          <svg width="20" height="20" class="icon-search" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M14.4815 8.25581C14.4815 9.92502 13.8274 11.4814 12.6544 12.6544C11.4814 13.8274 9.90246 14.4815 8.25581 14.4815C6.60916 14.4815 5.03018 13.8274 3.85722 12.6544C2.68427 11.4814 2.03012 9.90246 2.03012 8.25581C2.03012 6.5866 2.68427 5.03018 3.85722 3.85722C5.03018 2.68427 6.60916 2.03012 8.25581 2.03012C9.92502 2.03012 11.4814 2.68427 12.6544 3.85722C13.8274 5.03018 14.4815 6.5866 14.4815 8.25581M18.0455 16.6244L14.7522 13.3537C17.3237 10.0604 17.053 5.36853 14.098 2.41358C12.5416 0.85716 10.4664 0 8.25581 0C6.04524 0 3.97001 0.85716 2.41358 2.41358C0.85716 3.97001 0 6.04524 0 8.25581C0 10.4664 0.85716 12.5416 2.41358 14.098C3.97001 15.6542 6.04524 16.5116 8.25581 16.5116C10.0829 16.5116 11.8875 15.9026 13.3311 14.752L16.6018 18.068C16.8049 18.2711 17.053 18.3611 17.3237 18.3611C17.5943 18.3611 17.8425 18.2483 18.0455 18.068C18.4515 17.6843 18.4515 17.0304 18.0455 16.6244"
+              fill="white" />
+          </svg>
+        </a>
+        <div class="nav-search is-hidden is-clipped">
+          <div class="field">
+            <form class="is-flex">
+              <input type="text" class="search-input" placeholder="Pesquisar por...">
+              <button type="submit" class="button is-small">
+                <svg width="20" height="20" class="icon-search" viewBox="0 0 19 19"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M14.4815 8.25581C14.4815 9.92502 13.8274 11.4814 12.6544 12.6544C11.4814 13.8274 9.90246 14.4815 8.25581 14.4815C6.60916 14.4815 5.03018 13.8274 3.85722 12.6544C2.68427 11.4814 2.03012 9.90246 2.03012 8.25581C2.03012 6.5866 2.68427 5.03018 3.85722 3.85722C5.03018 2.68427 6.60916 2.03012 8.25581 2.03012C9.92502 2.03012 11.4814 2.68427 12.6544 3.85722C13.8274 5.03018 14.4815 6.5866 14.4815 8.25581M18.0455 16.6244L14.7522 13.3537C17.3237 10.0604 17.053 5.36853 14.098 2.41358C12.5416 0.85716 10.4664 0 8.25581 0C6.04524 0 3.97001 0.85716 2.41358 2.41358C0.85716 3.97001 0 6.04524 0 8.25581C0 10.4664 0.85716 12.5416 2.41358 14.098C3.97001 15.6542 6.04524 16.5116 8.25581 16.5116C10.0829 16.5116 11.8875 15.9026 13.3311 14.752L16.6018 18.068C16.8049 18.2711 17.053 18.3611 17.3237 18.3611C17.5943 18.3611 17.8425 18.2483 18.0455 18.068C18.4515 17.6843 18.4515 17.0304 18.0455 16.6244"
+                    fill="white" />
+                </svg>
+              </button>
+              <span class="search-close" title="Cancelar">X</span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-lang is-inline-flex">
+      <a class="nav-link active">PT</a>
+      <a class="nav-link">EN</a>
+      <a class="nav-link">ES</a>
+    </div>
+    <a href="https://maisdiversidade.joboconvo.com/" class="nav-curriculum is-inline-flex">Envie seu CV</a>
+
+    <!-- mobile navigation -->
+    <div class="nav-search-mobile is-hidden">
+      <div class="field">
+        <form class="is-flex">
+          <input type="text" class="search-input-mobile" placeholder="Pesquisar por...">
+          <button type="submit" class="button is-small">
+            <svg width="20" height="20" class="icon-search" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M14.4815 8.25581C14.4815 9.92502 13.8274 11.4814 12.6544 12.6544C11.4814 13.8274 9.90246 14.4815 8.25581 14.4815C6.60916 14.4815 5.03018 13.8274 3.85722 12.6544C2.68427 11.4814 2.03012 9.90246 2.03012 8.25581C2.03012 6.5866 2.68427 5.03018 3.85722 3.85722C5.03018 2.68427 6.60916 2.03012 8.25581 2.03012C9.92502 2.03012 11.4814 2.68427 12.6544 3.85722C13.8274 5.03018 14.4815 6.5866 14.4815 8.25581M18.0455 16.6244L14.7522 13.3537C17.3237 10.0604 17.053 5.36853 14.098 2.41358C12.5416 0.85716 10.4664 0 8.25581 0C6.04524 0 3.97001 0.85716 2.41358 2.41358C0.85716 3.97001 0 6.04524 0 8.25581C0 10.4664 0.85716 12.5416 2.41358 14.098C3.97001 15.6542 6.04524 16.5116 8.25581 16.5116C10.0829 16.5116 11.8875 15.9026 13.3311 14.752L16.6018 18.068C16.8049 18.2711 17.053 18.3611 17.3237 18.3611C17.5943 18.3611 17.8425 18.2483 18.0455 18.068C18.4515 17.6843 18.4515 17.0304 18.0455 16.6244"
+                fill="white" />
+            </svg>
+          </button>
+          <span class="search-close">X</span>
+        </form>
+      </div>      
+    </div>
+    <div class="nav-mobile">
+      <div class="is-flex">
+        <a class="nav-link search-button-mobile p-r-20">
+          <svg width="20" height="20" class="icon-search" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M14.4815 8.25581C14.4815 9.92502 13.8274 11.4814 12.6544 12.6544C11.4814 13.8274 9.90246 14.4815 8.25581 14.4815C6.60916 14.4815 5.03018 13.8274 3.85722 12.6544C2.68427 11.4814 2.03012 9.90246 2.03012 8.25581C2.03012 6.5866 2.68427 5.03018 3.85722 3.85722C5.03018 2.68427 6.60916 2.03012 8.25581 2.03012C9.92502 2.03012 11.4814 2.68427 12.6544 3.85722C13.8274 5.03018 14.4815 6.5866 14.4815 8.25581M18.0455 16.6244L14.7522 13.3537C17.3237 10.0604 17.053 5.36853 14.098 2.41358C12.5416 0.85716 10.4664 0 8.25581 0C6.04524 0 3.97001 0.85716 2.41358 2.41358C0.85716 3.97001 0 6.04524 0 8.25581C0 10.4664 0.85716 12.5416 2.41358 14.098C3.97001 15.6542 6.04524 16.5116 8.25581 16.5116C10.0829 16.5116 11.8875 15.9026 13.3311 14.752L16.6018 18.068C16.8049 18.2711 17.053 18.3611 17.3237 18.3611C17.5943 18.3611 17.8425 18.2483 18.0455 18.068C18.4515 17.6843 18.4515 17.0304 18.0455 16.6244"
+              fill="white" />
+          </svg>
+        </a>
+        <button id="toggleButton" class="toggleButton">
+          <svg width="24" height="14" xmlns="http://www.w3.org/2000/svg">
+            <rect height="2" width="24" y="12" x="0" fill="#fff" />
+            <rect height="2" width="24" y="0" x="-0.1875" fill="#fff" />
+            <rect height="2" width="24" y="6" x="0" fill="#fff" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

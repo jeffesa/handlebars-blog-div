@@ -1,0 +1,37 @@
+$size-1: 14px;
+$size-2: 20px;
+$size-3: 24px;
+$size-4: 28px;
+$size-5: 32px;
+$size-6: 40px;
+$size-7: 60px;
+$size-8: 80px;
+
+$sizes: ($size-1 $size-2 $size-3 $size-4 $size-5 $size-6 $size-7 $size-8);
+
+$lh-1: 100;
+$lh-2: 125;
+$lh-3: 130;
+$lh-4: 140;
+$lh-5: 150;
+
+$line-heights: ($lh-1 $lh-2 $lh-3 $lh-4 $lh-5);
+
+// $gap: 32px;
+
+// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$mobile: 768px !default;
+$tablet: 769px !default;
+// 960px container + 4rem
+$desktop: 960px + (2 * $gap) !default;
+// 1152px container + 4rem
+$widescreen: 1152px + (2 * $gap) !default;
+// 1344px container + 4rem
+$fullhd: 1280px + (2 * $gap);
+
+$radius-small: 2px;
+$radius: 8px;
+$radius-large: 8px;
+// $body-line-height: 1;
+
+$spacing: 2rem;

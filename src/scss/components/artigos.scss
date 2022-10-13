@@ -1,0 +1,205 @@
+.artigos {
+  .container {
+    @include from($desktop) {
+      padding: 0!important;
+    }
+  }
+
+  h3 {
+    font-weight: 700;
+    line-height: 1;
+
+    @media screen and (max-width: 320px) {
+      font-size: 1.45rem!important; // fix title spacing on small screen
+    }
+
+    @include from($widescreen) {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .artigos-title {
+    margin: auto;
+    @include from($tablet) {
+      max-width: 100%;
+    }
+  }
+
+  .artigos-list {
+
+    .image {
+      width: 100%;
+      height: auto;
+      object-fit: inherit;
+      @include from ($tablet) {
+        width: 410px;
+        height: 410px;
+        object-fit: cover;
+      }
+    }
+
+    .slider-container {
+      @include from ($tablet) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        .items {
+          height: 100%;
+        }
+      }
+    }
+
+    .artigo-item {
+      border-top: 1px solid #dadada;
+      padding-top: $size-6;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+      @include from($widescreen) {
+        max-width: 100%;
+      }
+
+      .tags a {
+        margin-left: 0.5rem;
+        &:first-child {
+          margin: 0;
+        }
+        &:hover {
+          color: $purple;
+          text-decoration: underline;
+        }
+      }
+
+      .artigo-link {
+        display: flex;
+        flex-direction: column;
+        color: inherit;
+        transition: color 0.2s ease-in-out;
+
+        .order-1 {
+          order: 1;
+          margin-bottom: 32px;
+
+          @include from($tablet) { 
+            margin-bottom: 0px;
+          }
+        }
+
+        .order-2 {
+          order: 3;
+          margin-top: 32px;
+
+          @include from($tablet) { 
+            order: 2;
+            margin-top: 0px;
+          }
+        }
+
+        .order-3 {
+          order: 2;
+
+          @include from($tablet) { 
+            order: 3;
+          }
+        }
+        
+
+        img {
+          border-radius: 8px;
+          transition: opacity 0.2s ease-in-out;
+        }
+
+        &:hover {
+          color: $black;
+          img {
+            opacity: 0.85;
+          }
+        }
+      }
+    }
+  }
+
+  .more-action {
+    text-align: center;
+    .button {
+      width: 100%;
+      max-width: 350px;
+      margin: auto;
+    }
+    @include from($desktop) {
+      text-align: left;
+      .button {
+        width: auto;
+        max-width: auto;
+      }
+    }
+  }
+
+  .slider {
+
+    /deep/.flickity-viewport {
+      width: 100%;
+    }
+
+    @include touch {
+      .items {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+    }
+
+    .flickity-page-dots {
+      @include from($fullhd) {
+        width: $fullhd;
+      }
+
+      font-size: $size-1;
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+      top: -90px;
+      padding-left: ($spacing);
+      margin: 0 auto;
+
+      & {
+        counter-reset: a;
+      }
+
+      .dot {
+        background: transparent;
+        color: $purple;
+        opacity: 1;
+
+        &.is-selected {
+          color: $white;
+        }
+
+        &::after {
+          content: counter(a, decimal-leading-zero);
+          counter-increment: a;
+        }
+
+        &.is-selected {
+          &::after {
+            border-bottom: 2px solid $white;
+            padding-bottom: 4px;
+          }
+        }
+
+        &:not(:last-child) {
+          padding-right: 24px;
+
+          @include mobile {
+            padding-right: 20px;
+          }
+          @include touch {
+            padding-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}

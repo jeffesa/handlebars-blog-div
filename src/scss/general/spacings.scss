@@ -1,0 +1,41 @@
+$spacing_0: 0;
+$spacing_1: 1;
+$spacing_2: 2;
+$spacing_4: 4;
+$spacing_8: 8;
+$spacing_12: 12;
+$spacing_16: 16;
+$spacing_20: 20;
+$spacing_24: 24;
+$spacing_32: 32;
+$spacing_40: 40;
+$spacing_48: 48;
+$spacing_56: 56;
+$spacing_64: 64;
+$spacing_72: 72;
+$spacing_80: 80;
+$spacing_88: 88;
+$spacing_96: 96;
+
+$spaceamounts: (
+  $spacing_0
+  $spacing_1
+  $spacing_2
+  $spacing_4
+  $spacing_8
+  $spacing_12
+  $spacing_16
+  $spacing_20
+  $spacing_24
+  $spacing_32
+  $spacing_40
+  $spacing_48
+  $spacing_56
+  $spacing_64
+  $spacing_72
+  $spacing_80
+  $spacing_88
+  $spacing_96
+);
+
+$sides: (top, bottom, left, right); // Leave this variable alone

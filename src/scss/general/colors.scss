@@ -1,0 +1,58 @@
+$white: #fff;
+$purple: #6b56a5;
+$dark-purple: #5D4A93;
+$purple-invert: findColorInvert($purple);
+$light-purple: #c0a7ff;
+$light-purple-2: #7C66BA;
+$light-gray: #f2f2f2;
+$gray: #a2a2a2;
+$orange: #f17d49;
+$orange-invert: findColorInvert($orange);
+$light-blue: #5cb6be;
+$light-blue-invert: findColorInvert($light-blue);
+$dark-blue: #180450;
+
+$site-bg: $white;
+$header-color: $purple;
+
+$primary: $purple;
+$primary-invert: $purple-invert;
+
+$secondary: $orange;
+$secondary-invert: $orange-invert;
+
+$tertiary: $light-blue;
+$tertiary-invert: $light-blue-invert;
+
+$colors: mergeColorMaps(
+  (
+    "primary": (
+      $primary,
+      $primary-invert,
+    ),
+    "secondary": (
+      $secondary,
+      $secondary-invert,
+    ),
+  ),
+  $custom-colors
+);
+
+$shadow-navbar: rgba(0, 0, 0, 0.3) 0 3px 5px;
+$shadow-button: $shadow-navbar;
+
+.has-color-orange {
+  color: $orange !important;
+}
+.has-color-purple {
+  color: $purple !important;
+}
+.has-color-light-blue {
+  color: $light-blue !important;
+}
+.has-color-gray {
+  color: $gray !important;
+}
+.has-color-white {
+  color: $white !important;
+}

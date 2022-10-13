@@ -1,0 +1,51 @@
+.contato-content {
+    width: 100%;
+    &>div {
+        &:first-child {
+            width: 40%;
+        }
+        &:last-child {
+            flex-grow: 2;
+            max-width: 45%;
+        }
+        label {
+            display: block;
+            margin-bottom: 12px;
+        }
+        input, textarea, select {
+            padding: 10px;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #969696;
+            height: 42px;
+            &:focus {
+                outline: none;
+            }
+        }
+
+        textarea {
+            height: 180px;
+            margin: 0;
+        }
+    }
+    @include until($tablet) {
+        display: block !important;
+        &>div {
+            &:first-child, &:last-child {
+                width: 100%;
+                max-width: 100%;
+            }
+            &:first-child {
+                padding-bottom: 60px;
+            }
+        }
+    }
+}
+
+.page-contato {
+    @include until($tablet) {
+        .post-info {
+            padding-bottom: 0px !important;
+        }
+    }
+}

@@ -1,0 +1,186 @@
+.servicos {
+  padding-bottom: $size-8;
+
+  @include touch {
+    padding-bottom: $size-8/2;
+  }
+
+  h3 {
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .content {
+    @include touch {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  .title-action {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    font-size: $size-1;
+    background: url(../img/bt-menos-purple.svg) no-repeat -6px 0;
+    transition: all 0.2s ease-in-out;
+    padding-left: 2.5rem;
+    margin-top: 0.5rem;
+
+    &:hover {
+      color: lighten($purple, 10);
+    }
+  }
+
+  .title-description {
+    display: block;
+  }
+
+  .container {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      margin-left: 2.15rem; // fix ie 11
+    }
+    .service-card {
+      height: 100%;
+      border-radius: 8px;
+      background-color: $light-blue;
+      transition: background-color 0.2s ease-in-out;
+
+      @include touch {
+        border-radius: 0px;
+        height: 100vh;
+        width: 100%;
+      }
+
+      .card-link {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        padding: 3rem;
+
+        @include touch {
+          padding-top: calc(3rem + 54px);
+          justify-content: flex-start;
+        }
+      }
+
+      .card-icon {
+        height: 95px;
+      }
+
+      .card-description-subtitle,
+      .card-description-text,
+      .card-action {
+        color: $white;
+      }
+
+      .card-description-subtitle {
+        line-height: 125%;
+      }
+
+      .card-action {
+        display: inline-flex;
+        align-items: center;
+        height: 38px;
+        font-size: $size-1;
+        background: url(../img/bt-menos.svg) no-repeat -6px 0;
+        transition: all 0.2s ease-in-out;
+        padding-left: 2.5rem;
+
+        @include touch {
+          background: url(../img/bt-menos-orange-hover.svg) no-repeat -6px 0;
+        }
+      }
+
+      // card hover
+      &:hover {
+        background-color: darken($light-blue, 7);
+
+        .card-action {
+          background: url(../img/bt-menos-orange-hover.svg) no-repeat -6px 0;
+        }
+      }
+    }
+  }
+
+  .slider {
+
+    /deep/.flickity-viewport {
+      width: 100%;
+    }
+
+    @include touch {
+      .items {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        min-height: 100vh;
+      }
+    }
+
+    @include touch {
+      .column {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .flickity-page-dots {
+      @include from($fullhd) {
+        width: $fullhd;
+      }
+
+      font-size: $size-1;
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+      top: -90px;
+      padding-left: ($spacing);
+      margin: 0 auto;
+
+      & {
+        counter-reset: a;
+      }
+
+      .dot {
+        background: transparent;
+        color: $purple;
+        opacity: 1;
+
+        &.is-selected {
+          color: $white;
+        }
+
+        &::after {
+          content: counter(a, decimal-leading-zero);
+          counter-increment: a;
+        }
+
+        &.is-selected {
+          &::after {
+            border-bottom: 2px solid $white;
+            padding-bottom: 4px;
+          }
+        }
+
+        &:not(:last-child) {
+          padding-right: 24px;
+
+          @include mobile {
+            padding-right: 20px;
+          }
+          @include touch {
+            padding-right: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .scroll {
+    position: absolute;
+  }
+}

@@ -1,0 +1,25 @@
+$family-serif: "Montserrat", sans-serif;
+$family-sans-serif: "Ubuntu", sans-serif;
+$family-main: "Viga", Verdana, Geneva, Tahoma, sans-serif;
+
+$family-primary: $family-serif;
+$family-secondary: $family-sans-serif;
+
+$title-family: $family-primary;
+$title-weight: $weight-light;
+$subtitle-family: $family-primary;
+$button-family: $family-primary;
+
+$weight-ultra-bold: 900;
+
+.has-text-weight-ultra-bold {
+  font-weight: $weight-ultra-bold !important;
+}
+
+.has-font-weight-bold {
+  font-weight: bold !important;
+}
+
+.has-text-underline {
+  text-decoration: underline !important;
+}

@@ -1,0 +1,210 @@
+footer {
+  .box-purple {
+    background-color: $purple;
+    color: $white;
+    @include from($desktop) {
+      padding: 0;
+      border-radius: $radius;
+      .team {
+        padding-left: 2rem;
+        p,
+        a {
+          font-size: 90%;
+        }
+      }
+    }
+  }
+
+  .columns {
+    padding: 48px 16px;
+
+    @include from($desktop) {
+      padding: 56px;
+    }
+    @include from($widescreen) {
+      padding: 56px;
+    }
+    @include from($desktop) {
+      .column {
+        flex-basis: auto;
+        &:nth-child(2) {
+          flex-basis: 295px;
+        }
+      }
+    }
+
+    .column {
+      position: relative;
+    }
+  }
+
+  .contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0.5rem;
+    grid-template-areas: '. .';
+    border-bottom: 1px solid $light-purple-2;
+    padding-bottom: 2rem;
+
+    @media screen and (max-width: 320px) { //fix small size screen
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      gap: 1.5rem;
+      grid-template-areas: '.' '.';
+    }
+  
+    @include from($desktop) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      gap: 1.5rem;
+      grid-template-areas: '.' '.';
+      border: 0;
+      padding: 0;
+    }
+    a {
+      display: inline-flex;
+      justify-content: flex-start;
+      img {
+        margin-left: 8px;
+        align-self: center;
+      }
+      @media screen and (max-width: 320px) { //fix small size screen
+        display: flex;
+        justify-content: flex-start;
+        img {
+          margin-left: 16px;
+        }
+        &:last-child {
+          img {
+            margin-left: 24px;
+          }
+        }
+      }
+      @include from($widescreen) {
+        display: flex;
+        justify-content: flex-start;
+        img {
+          margin-left: 16px;
+        }
+        &:last-child {
+          img {
+            margin-left: 24px;
+          }
+        }
+      }
+    }
+    .policy {
+      font-size: 14px;
+      background-color: #f17d49;
+      border-color: transparent;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 7px;
+      position: absolute;
+      bottom: 0;
+    }
+  }
+
+  .team {
+    border-bottom: 1px solid $light-purple-2;
+    padding: 2rem 0;
+    margin-bottom: 0.5rem;
+
+    @include from($desktop) {
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  .title-newsletter,
+  .title-team {
+    font-size: 18px;
+    @include from($fullhd) {
+      font-size: 20px;
+    }
+  }
+
+  a {
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: lighten($purple, 30);
+    }
+  }
+
+  .field {
+    .input {
+      background-color: $purple;
+      font-size: $size-1;
+      color: $white;
+      border-color: $purple;
+      border-bottom-color: darken($purple, 10);
+      box-shadow: none;
+      &::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      &::-moz-placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      &:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+      &:-moz-placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
+    .button {
+      min-width: 230px;
+    }
+  }
+
+  .nav-social {
+    .nav-footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 1.5rem;
+      grid-template-areas: ". .";
+
+      a {
+        display: block;
+        color: lighten($purple, 25);
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        &:hover {
+          color: $white;
+        }
+      }
+
+      @include from($desktop) {
+        .right {
+          padding-left: 1rem;
+        }
+      }
+    }
+    .img-stamp {
+      width: 100px;
+    }
+    .social-icons {
+      a {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .copyright {
+    padding-bottom: 2rem;
+    text-align: center;
+    a {
+      margin: 0 0.5rem;
+      &:hover {
+        text-decoration: underline;
+      }
+      @include from($widescreen) {
+        margin: 0 0 0 1rem;
+      }
+    }
+    
+  }
+}

@@ -1,0 +1,84 @@
+.quem-somos {
+    .page-content {
+        .quem-somos-text {
+            h3 {
+                font-size: 28px;
+            }
+            h2, h3 {
+                line-height: 1;
+                color: $orange;
+            }
+            h2 {
+                font-size: 40px;
+            }
+            @include from($tablet) {
+                max-width: 60%;
+                h2 {
+                    max-width: 75%;
+                    font-size: 55px;                
+                }
+            }            
+        }
+        .quem-somos-items {
+            padding-left: 35px;
+            padding-top: 80px;
+            margin-left: 0;
+            .quem-somos-item {
+                position: relative;
+                cursor: default;
+                &:before {
+                    content: url(../img/bt-menos-purple.svg);
+                    position: absolute;
+                    top: -15px;
+                    left: -40px;
+                }
+                p {
+                    font-weight: 400;
+                    font-size: 18px;            
+                    color: $purple;
+                    font-family: $family-main;
+                }
+                &:hover {
+                    p {
+                        color: $orange;
+                    }
+                }                
+            }
+            @include until($tablet) {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 10%;
+                .quem-somos-item {
+                    width: 33%;                               
+                }
+            }
+
+            @include until($mobile) {     
+                margin-left: 0;           
+                .quem-somos-item {
+                    width: 100%;
+                    &:before {
+                        top: -10px;
+                    }
+                }
+                p {
+                    font-size: 22px;
+                }
+            }
+            
+            @include from($tablet) {
+                margin-left: 0;
+                display: flex;
+                justify-content: space-around;
+                .quem-somos-item {
+                    width: inherit;
+                    p {
+                        font-size: 22px;
+                    }
+                }
+            }
+            
+        }
+        
+    }
+}

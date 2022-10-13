@@ -1,0 +1,26 @@
+.na-midia {
+    .na-midia-grid {
+        h2 {
+            font-size:26px;
+            padding-bottom: 8px;
+        }
+        &>div {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        grid-row-gap: 80px;
+        @include from ($mobile) {            
+            display: grid;            
+            grid-template-columns: repeat(2, 1fr);
+            grid-column-gap: 20px;
+        }
+        @include from ($tablet) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-column-gap: 20px;
+        }
+    }
+}

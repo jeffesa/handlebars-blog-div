@@ -1,0 +1,51 @@
+.page-header{
+    &.page-post, &.page-posts {        
+        .related-posts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 1fr;
+            min-width: 0;
+            min-height: 0;
+            grid-gap: 10px;
+            .button {
+                width: 100%;
+            }
+            &>div {
+                min-width: 0;
+                min-height: 0;
+                height: 100%;
+                .button {
+                    height: 100%;
+                }
+                @include until($mobile) {
+                    img  {
+                        display: none;
+                    }
+                    .button {
+                        span {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+        .post-info {
+            font-family: $family-main;
+            font-size: 14px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .post-date {
+            color: $light-blue;            
+        }
+        .page-content {
+            h2 {
+                font-size: 40px;
+                @include from($tablet) {
+                    font-size: 68px;
+                }
+            }
+        }
+    }
+}

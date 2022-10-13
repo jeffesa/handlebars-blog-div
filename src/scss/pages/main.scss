@@ -1,0 +1,48 @@
+@import "../general/bulma";
+@import "../components/header";
+@import "../components/footer";
+@import "../components/homeHero";
+@import "../components/manifesto";
+@import "../components/servicos";
+@import "../components/podcast";
+@import "../components/artigos";
+@import "../components/equipe";
+@import "../components/clientes";
+@import '../components/videoModal';
+@import '../components/insidePages';
+@import '../components/sobreNos';
+@import '../components/depoimentos';
+@import '../components/oqueFazemos';
+@import '../components/namidia';
+@import '../components/ebooks';
+@import '../components/404';
+@import '../components/post';
+@import '../components/posts';
+@import '../components/contato';
+
+@import "../../../node_modules/flickity/css/flickity";
+
+body {
+  font-family: $family-primary !important;
+  overflow: hidden;
+}
+
+header,
+main {
+  margin: 0 auto;
+  padding: 0 ($spacing/2);
+}
+
+@include from($fullhd) {
+  header,
+  main {
+    max-width: $fullhd;
+  }
+}
+
+@include until($desktop) {
+  header,
+  main {
+    max-width: calc(100% - #{$spacing});
+  }
+}

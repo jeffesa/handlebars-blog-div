@@ -1,0 +1,43 @@
+.page-header{
+    &.page-posts {
+        .container {
+            padding-top: 80px;
+        }
+        .post-info {
+            font-family: $family-main;
+            font-size: 14px;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .post-date {
+            color: $gray;    
+            margin-bottom: 0;        
+        }
+        .page-content {
+            padding-top: 0;
+            max-width: 100%;
+            h2 {
+                max-width: 100%;
+                color: $black;
+                font-size: 36px;
+                @include from($tablet) {
+                    max-width: 60%;
+                    font-size: 55px;
+                }
+            }
+            hr {
+                margin: 40px 0;
+                @include from($tablet) {
+                    margin: 60px 0;
+                }
+            }
+            &:last-child {
+                padding-bottom: 80px;
+                hr {
+                    display: none;
+                }
+            }
+        }
+    }
+}
